@@ -34,17 +34,6 @@ app.post('/chat', (req, res) => {
   // Respond with bot's reply
   res.json({ botResponse });
 });
-
-// Route to retrieve chat history
-app.get('/chats', (req, res) => {
-  // Since we're not using a database, we'll return a sample chat history
-  const sampleChats = [
-    { sender: 'user', message: 'Hello!' },
-    { sender: 'bot', message: 'Hello! How can I assist you today?' },
-  ];
-  res.json(sampleChats);
-});
-
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
