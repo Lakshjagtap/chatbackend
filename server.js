@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mongoose = require('mongoose');
 
 const app = express();
 const PORT = 3000;
@@ -9,21 +8,6 @@ const PORT = 3000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-
-// MongoDB Connection
-const mongoURI = 'mongodb://127.0.0.1:27017/chatdb'; // Update with your MongoDB connection string
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error('MongoDB connection error:', err));
-
-// Define Chat Schema and Model
-const chatSchema = new mongoose.Schema({
-  sender: String,
-  message: String,
-  timestamp: { type: Date, default: Date.now },
-});
-
-const Chat = mongoose.model('Chat', chatSchema);
 
 // Simulated bot response logic
 function generateBotResponse(userMessage) {
@@ -37,33 +21,28 @@ function generateBotResponse(userMessage) {
 }
 
 // Route to handle messages
-app.post('/chat', async (req, res) => {
+app.post('/chat', (req, res) => {
   const { message } = req.body;
 
   if (!message) {
     return res.status(400).json({ error: 'Message cannot be empty' });
   }
 
-  // Save user message to MongoDB
-  const userMessage = new Chat({ sender: 'user', message });
-  await userMessage.save();
-
-  // Generate bot response and save it to MongoDB
+  // Generate bot response
   const botResponse = generateBotResponse(message);
-  const botMessage = new Chat({ sender: 'bot', message: botResponse });
-  await botMessage.save();
 
+  // Respond with bot's reply
   res.json({ botResponse });
 });
 
 // Route to retrieve chat history
-app.get('/chats', async (req, res) => {
-  try {
-    const chats = await Chat.find().sort({ timestamp: 1 }); // Fetch chats in ascending order
-    res.json(chats);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to retrieve chat history' });
-  }
+app.get('/chats', (req, res) => {
+  // Since we're not using a database, we'll return a sample chat history
+  const sampleChats = [
+    { sender: 'user', message: 'Hello!' },
+    { sender: 'bot', message: 'Hello! How can I assist you today?' },
+  ];
+  res.json(sampleChats);
 });
 
 // Start the server
