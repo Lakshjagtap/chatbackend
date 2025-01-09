@@ -14,7 +14,7 @@ function generateBotResponse(userMessage) {
 
   // General Greetings
   if (userMessageLower.includes('hello') || userMessageLower.includes('hi') || userMessageLower.includes('hey')) {
-    return 'Hello! How can I assist you today? I have information on cars, animals, and birds. You can ask me about these!';
+    return 'Hello! How can I assist you today? I can provide information on the following topics: \n1. Types of cars (e.g., sports cars, sedans, SUVs, etc.) \n2. Animals and their facts \n3. Birds and their facts. \nJust ask me about any of these, and I\'ll provide details!!';
   }
 
   // Help request
@@ -22,8 +22,12 @@ function generateBotResponse(userMessage) {
     return 'I can provide information on the following topics: \n1. Types of cars (e.g., sports cars, sedans, SUVs, etc.) \n2. Animals and their facts \n3. Birds and their facts. \nJust ask me about any of these, and I\'ll provide details!';
   }
 
+  else if (userMessageLower.includes('thanks') || userMessageLower.includes('thank you')) {
+    return 'You\'re welcome! If you need more information, feel free to ask anytime!';
+  }
+
   // Specific Information for Cars
-  else if (userMessageLower.includes('car')) {
+  else if (userMessageLower.includes('car') || userMessageLower.includes('cars')) {
     return 'I can tell you about different types of cars like sports cars, SUVs, sedans, hatchbacks, convertibles, coupes, minivans, pickup trucks, and more. Just ask me about a specific type!';
   }
 
