@@ -127,9 +127,6 @@ function generateBotResponse(userMessage) {
   }
 }
 
-
-
-
 // Route to handle messages
 app.post('/chat', (req, res) => {
   const { message } = req.body;
