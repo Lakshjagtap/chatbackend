@@ -13,7 +13,7 @@ function generateBotResponse(userMessage) {
   const userMessageLower = userMessage.toLowerCase(); // Convert user message to lowercase for case-insensitive comparison
 
   // General Greetings
-  if (userMessageLower.includes('hello') || userMessageLower.includes('hi') || userMessageLower.includes('hey') || (userMessageLower.includes('what')) {
+  if (userMessageLower.includes('hello') || userMessageLower.includes('hi') || userMessageLower.includes('hey') || (userMessageLower.includes('what'))) {
     return 'Hello! How can I assist you today? I can provide information on the following topics: \n1. Types of cars (e.g., sports cars, sedans, SUVs, etc.) \n2. Animals and their facts \n3. Birds and their facts. \nJust ask me about any of these, and I\'ll provide details!!';
   }
 
@@ -22,7 +22,7 @@ function generateBotResponse(userMessage) {
     return 'I can provide information on the following topics: \n1. Types of cars (e.g., sports cars, sedans, SUVs, etc.) \n2. Animals and their facts \n3. Birds and their facts. \nJust ask me about any of these, and I\'ll provide details!';
   }
 
-  else if (userMessageLower.includes('thanks') || userMessageLower.includes('thank you') || (userMessageLower.includes('thankyou')) {
+  else if (userMessageLower.includes('thanks') || userMessageLower.includes('thank you') || (userMessageLower.includes('thankyou'))) {
     return 'You\'re welcome! If you need more information, feel free to ask anytime!';
   }
 
@@ -58,33 +58,33 @@ function generateBotResponse(userMessage) {
   }
 
   // Specific Information for Animals
-  else if (userMessageLower.includes('animal') || (userMessageLower.includes('animals')) {
+  else if (userMessageLower.includes('animal') || (userMessageLower.includes('animals'))) {
     return 'I can provide information about animals like lions, tigers, elephants, and more. Ask me about a specific animal to get detailed facts!';
   }
 
   // Additional Animal Information
-  else if (userMessageLower.includes('lion') || (userMessageLower.includes('lions')) {
+  else if (userMessageLower.includes('lion') || (userMessageLower.includes('lions'))) {
     return 'Lions are large carnivorous mammals found primarily in Africa, with a small population in the Gir Forest of India. They are social animals that live in groups called prides, consisting of multiple females, their offspring, and a few males. Lions are known for their majestic manes, which are more prominent in males. These apex predators primarily hunt large herbivores like zebras, buffaloes, and wildebeests. They rely on teamwork and strategy to bring down prey. Lions are also known for their powerful roars, which can be heard from several miles away. They have excellent night vision, making them effective hunters at night. Despite their strength and fearsome reputation, lions are facing threats from habitat loss and human-wildlife conflict, leading to a decline in their population in the wild.';
   }
-  else if (userMessageLower.includes('tiger') || (userMessageLower.includes('tigers')) {
+  else if (userMessageLower.includes('tiger') || (userMessageLower.includes('tigers')) ){
     return 'Tigers are large carnivores found primarily in Asia. They are the largest of all cat species, with males weighing up to 500 pounds. Tigers have striking orange fur with black stripes, each tiger having its own unique pattern. They are solitary hunters, unlike lions, and prefer dense forests or grasslands for stalking their prey. Tigers are excellent swimmers, which sets them apart from other big cats. They typically hunt large herbivores such as deer and wild boar. Tigers are endangered, with their population threatened by habitat loss and poaching. Conservation efforts are underway to protect these majestic animals.';
   }
-  else if (userMessageLower.includes('bear') || (userMessageLower.includes('bears')) {
+  else if (userMessageLower.includes('bear') || (userMessageLower.includes('bears'))) {
     return 'Bears are large, powerful mammals found in various regions across North America, Europe, and Asia. There are several species, including grizzly bears, black bears, and polar bears. Bears are omnivores, meaning they eat both plant and animal matter. Their diet may include berries, fish, and small mammals. Bears hibernate in the winter to conserve energy, retreating to dens where they sleep for months. Polar bears, however, live in Arctic regions and have evolved to be excellent swimmers. Unfortunately, habitat loss and climate change are threatening polar bear populations.';
   }
-  else if (userMessageLower.includes('giraffe') || (userMessageLower.includes('giraffes')) {
+  else if (userMessageLower.includes('giraffe') || (userMessageLower.includes('giraffes')) ){
     return 'Giraffes are the tallest land animals, growing up to 18 feet in height. They are herbivores and feed on leaves from tall trees, particularly acacias. Giraffes have long necks that allow them to reach high foliage. Their unique spotted coat patterns are used to identify individuals. These animals are native to Africa, and they live in savannahs and open woodlands. Giraffes have a distinctive walking pattern called "pacing," where both legs on one side of their body move simultaneously. Despite their height and size, giraffes are generally peaceful and social animals.';
   }
-  else if (userMessageLower.includes('elephant') || (userMessageLower.includes('elephant')) {
+  else if (userMessageLower.includes('elephant') || (userMessageLower.includes('elephants'))) {
     return 'Elephants are the largest land mammals, known for their exceptional memory and strong social bonds. African elephants are larger with bigger ears compared to their Asian relatives. They live in large herds led by a matriarch. Their trunks are used for a wide variety of purposes including feeding, drinking, and communicating. Elephants are highly intelligent and can use tools, display emotions, and show empathy. They have complex social structures and mourn the loss of their companions. Sadly, elephants are endangered due to habitat loss, poaching for ivory, and human-wildlife conflict.';
   }
-  else if (userMessageLower.includes('kangaroo') || (userMessageLower.includes('kangaroos')) {
+  else if (userMessageLower.includes('kangaroo') || (userMessageLower.includes('kangaroos'))) {
     return 'Kangaroos are marsupial mammals native to Australia. They are known for their powerful hind legs, large tails, and hopping movements. Kangaroos are herbivores, primarily feeding on grasses and shrubs. They have a unique method of locomotion called "saltation," which involves hopping with their strong hind legs. They are highly social animals and live in groups known as mobs. Male kangaroos are much larger than females and have powerful hind legs, which they use in boxing matches during mating season. Some species, like the red kangaroo, can reach speeds of over 35 miles per hour.';
   }
-  else if (userMessageLower.includes('zebra') || (userMessageLower.includes('zebras')) {
+  else if (userMessageLower.includes('zebra') || (userMessageLower.includes('zebras'))) {
     return 'Zebras are herbivorous animals found in Africa. They are closely related to horses and donkeys but are distinguished by their unique black and white striped coats. Each zebra\'s stripe pattern is unique, much like human fingerprints. Zebras live in herds for protection against predators, as their stripes help confuse and camouflage them in the wild. They primarily graze on grass but can also eat shrubs and trees. There are three main species of zebras: the plains zebra, mountain zebra, and Grevy\'s zebra. They are known for their social behavior and strong group bonds.';
   }
-  else if (userMessageLower.includes('panda') || (userMessageLower.includes('pandas')) {
+  else if (userMessageLower.includes('panda') || (userMessageLower.includes('pandas'))) {
     return 'Pandas are large bear-like mammals found in China. They are primarily herbivores, with bamboo making up around 99% of their diet. Pandas have a low metabolic rate and must consume large amounts of bamboo to meet their nutritional needs. They are easily recognizable due to their black and white fur, with distinctive black patches around their eyes, ears, and limbs. Pandas are solitary animals, with each one marking its territory to avoid conflict with others. Due to habitat destruction and low reproductive rates, pandas are an endangered species, though conservation efforts have led to a gradual increase in their population.';
   }
 
