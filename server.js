@@ -126,52 +126,53 @@ function generateBotResponse(userMessage) {
     return 'Crows are highly intelligent birds that are found in many parts of the world. Known for their ability to solve complex problems, crows are capable of using tools, such as sticks, to obtain food. They have strong social structures and are known to live in large groups called murders. Crows are omnivores and will eat a wide variety of foods, from small animals to carrion and human food scraps. They are often seen in urban environments, as they are highly adaptable to living near humans. Crows also communicate with a wide range of vocalizations and body language.';
   }
 
-   // Emoji responses with enhanced responses
-   else if (userMessage.includes('😊') || userMessage.includes('😄')) {
-    return 'I see you’re in a cheerful mood! 😊 What’s making you smile today? How can I assist you further?';
+   // Emoji responses with enhanced responses and guidance
+  else if (userMessage.includes('😊') || userMessage.includes('😄')) {
+    return 'I see you’re in a cheerful mood! 😊 What’s making you smile today? If you’d like, I can share some fun facts about animals, cars, or birds. Just let me know what interests you!';
   }
   else if (userMessage.includes('😢') || userMessage.includes('😭')) {
-    return 'Oh no! 😢 It seems like you might be feeling sad. Is there something I can do to help? I’m here for you.';
+    return 'Oh no! 😢 It seems like you might be feeling sad. Is there something I can do to help? I’m here for you. Want to talk about it, or should I share something uplifting like fun animal facts or amazing car models?';
   }
   else if (userMessage.includes('😂') || userMessage.includes('🤣')) {
-    return 'Haha! Glad you’re having a laugh! 😂 I’m always here to bring some joy. Anything fun you’d like to chat about?';
+    return 'Haha! Glad you’re having a laugh! 😂 Let’s keep that positive energy going! Would you like to hear a funny animal story, or are you interested in cool facts about cars or birds?';
   }
   else if (userMessage.includes('😎') || userMessage.includes('🤩')) {
-    return 'Looking super cool 😎 or feeling like a star? Let me know how I can keep that positive vibe going!';
+    return 'Looking super cool 😎 or feeling like a star? Let me know how I can keep that positive vibe going! If you’re into cool cars or fascinating animals, I can tell you all about them!';
   }
   else if (userMessage.includes('🤔') || userMessage.includes('🧐')) {
-    return 'I see you’re thinking deeply! 🤔 Is there a tough question on your mind that I can help with?';
+    return 'I see you’re thinking deeply! 🤔 Is there a tough question on your mind that I can help with? Maybe you’re curious about a specific animal, car, or bird? I can dive deep into any topic!';
   }
   else if (userMessage.includes('😡') || userMessage.includes('🤬')) {
-    return 'I sense some frustration or anger 😡. Take a deep breath. How can I help make things better? Let’s figure it out together!';
+    return 'I sense some frustration or anger 😡. Take a deep breath. How can I help make things better? Would you like to hear about something positive, like cute animals or cool car models to lighten the mood?';
   }
   else if (userMessage.includes('😍') || userMessage.includes('😘')) {
-    return 'Aww, feeling the love! 😍 If you’re passionate about something, tell me more! I’d love to hear about it!';
+    return 'Aww, feeling the love! 😍 If you’re passionate about something, tell me more! I’d love to hear about it. Interested in cute animal facts or awesome car details? Let’s chat!';
   }
   else if (userMessage.includes('🚗') || userMessage.includes('🚙')) {
-    return 'Are you in the mood to talk about cars? 🚗 Let me know if you want to dive into the world of sports cars, sedans, or SUVs!';
+    return 'Are you in the mood to talk about cars? 🚗 Let me know if you want to dive into the world of sports cars, sedans, or SUVs! Or, I can share amazing animal facts to keep you entertained!';
   }
   else if (userMessage.includes('🐶') || userMessage.includes('🐱')) {
-    return 'Animals make everything better! 🐶🐱 If you’re an animal lover, I can share some awesome facts about dogs, cats, and more!';
+    return 'Animals make everything better! 🐶🐱 If you’re an animal lover, I can share some awesome facts about dogs, cats, and more! Or, if you prefer, let’s talk about cool cars or birds!';
   }
   else if (userMessage.includes('🐦')) {
-    return 'Birds are such fascinating creatures! 🐦 If you’re curious about birds, I can share cool facts about sparrows, parrots, or even eagles!';
+    return 'Birds are such fascinating creatures! 🐦 If you want to learn more about sparrows, parrots, or even eagles, just ask! Or, I can tell you about different car models or animal species.';
   }
   else if (userMessage.includes('💡')) {
-    return 'A bright idea? 💡 I’m all ears! What’s the new thought or inspiration you’re exploring?';
+    return 'A bright idea? 💡 I’m all ears! What’s the new thought or inspiration you’re exploring? I can also give you some fun facts about cars, animals, or birds if you’d like!';
   }
   else if (userMessage.includes('🍕')) {
-    return 'Yum! 🍕 Who doesn’t love pizza? What’s your favorite topping? Or should I help you with some fun facts about pizza?';
+    return 'Yum! 🍕 Who doesn’t love pizza? What’s your favorite topping? Or, if you’re in the mood for something different, let me share some exciting animal facts or car details!';
   }
   else if (userMessage.includes('🎉')) {
-    return 'It’s a celebration! 🎉 What’s the occasion? Let’s keep the good vibes rolling!';
+    return 'It’s a celebration! 🎉 What’s the occasion? Let’s keep the good vibes rolling! Would you like to hear about a cool car or animal fact to keep the party going?';
   }
   else if (userMessage.includes('🌍')) {
-    return 'The world is full of wonders! 🌍 Let me know if you’re curious about travel, nature, or any other amazing places on Earth!';
+    return 'The world is full of wonders! 🌍 Let me know if you’re curious about travel, nature, or any other amazing places on Earth! Or, if you want, I can share some cool facts about animals or cars!';
   }
   else if (userMessage.includes('💪')) {
-    return 'Feeling strong and empowered? 💪 Keep that energy up! Need some motivation or want to chat about strength, fitness, or success?';
+    return 'Feeling strong and empowered? 💪 Keep that energy up! Need some motivation or want to chat about strength, fitness, or success? Or should I share some inspiring animal stories or cool cars to keep you motivated?';
   }
+
   // Continue adding information for birds and other animals if needed...
   else {
     return 'I didn\'t quite catch that. Please ask about cars, animals, or birds, and I\'ll provide more details!';
