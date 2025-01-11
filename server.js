@@ -32,7 +32,7 @@ function generateBotResponse(userMessage) {
   }
 
   // Information about Car Types
-  else if (userMessageLower.includes('sports car')) {
+  else if (userMessageLower.includes('sports')) {
     return 'Sports cars are high-performance vehicles designed for speed and agility. They are often lightweight and feature powerful engines, making them capable of reaching high speeds and accelerating quickly. Most sports cars have a sleek, aerodynamic design to minimize drag and maximize stability at high speeds. These vehicles are typically two-seater or 2+2 configurations, designed for performance over practicality. Examples of popular sports cars include the Ferrari 488, Porsche 911, Lamborghini Huracán, and Chevrolet Corvette. Sports cars are often more expensive due to their advanced engineering, luxury features, and high-performance parts. They are designed for enthusiasts who appreciate driving dynamics and a thrilling ride.';
   }
   else if (userMessageLower.includes('sedan')) {
@@ -53,7 +53,7 @@ function generateBotResponse(userMessage) {
   else if (userMessageLower.includes('minivan')) {
     return 'Minivans are designed to provide maximum comfort and space, especially for families. These vehicles typically feature sliding side doors for easier access, especially in tight parking spaces. Minivans offer three rows of seating and ample cargo space, making them ideal for transporting passengers and luggage. Many modern minivans are equipped with advanced technology, including infotainment systems, safety features, and convenience options like power-sliding doors and built-in vacuum cleaners. Popular minivans include the Toyota Sienna, Honda Odyssey, Chrysler Pacifica, and Kia Carnival. Although they are larger than sedans, minivans are known for their smooth ride, ease of driving, and ability to accommodate a larger number of passengers and their belongings comfortably. They are great for long family trips.';
   }
-  else if (userMessageLower.includes('pickup truck')) {
+  else if (userMessageLower.includes('pickup') || userMessageLower.includes('truck')) {
     return 'Pickup trucks are built for utility and durability, making them ideal for hauling heavy loads and working in tough conditions. These vehicles feature an open cargo area with a flatbed, often equipped with a tailgate for easy loading and unloading. Pickup trucks come in various sizes, from compact models like the Ford Ranger to larger heavy-duty options like the Ford F-250 and Ram 2500. Many pickup trucks also offer four-wheel-drive capabilities for off-roading or driving in adverse conditions. In addition to their towing and hauling capacities, modern pickups offer advanced technology, including infotainment systems, safety features, and even luxury touches in higher-end models. Examples of popular pickup trucks include the Ford F-150, Chevrolet Silverado, Toyota Tacoma, and Nissan Frontier. They are perfect for work, adventure, and those who need to transport larger loads.';
   }
 
@@ -89,11 +89,14 @@ function generateBotResponse(userMessage) {
   }
 
   else if (userMessageLower.includes('bird')) {
-    return 'I can provide information on various birds like eagles, parrots, sparrows, owls, and many more! Ask me about any bird!';
+    return 'I can provide information on various birds like eagles, parrots, sparrows, owls, crow and many more! Ask me about any bird!';
   }
   // Specific Bird Information (10 common birds)
   else if (userMessageLower.includes('eagle')) {
     return 'Eagles are large birds of prey known for their powerful beaks and sharp talons. They have keen eyesight, which allows them to spot prey from miles away. Eagles are often found near large bodies of water, where they hunt for fish, but they also prey on small mammals and birds. They are powerful fliers and are known for their impressive soaring abilities. The bald eagle is a well-known symbol of the United States, while golden eagles are commonly found in Europe and North America. Eagles build large nests, known as eyries, typically located in tall trees or on cliffs.';
+  }
+  else if (userMessageLower.includes('sparrow')) {
+    return 'Sparrows are small, agile birds commonly found in many parts of the world. They are social birds and often live in flocks, especially in urban areas. Sparrows are omnivores, feeding on seeds, insects, and small fruits. They are known for their distinctive chirping sounds and their adaptability to a wide range of environments. Sparrows are often seen hopping around on the ground, looking for food, and are popular for their cheerful and active behavior. They are important to the ecosystem, helping to control insect populations and disperse seeds.';
   }
   else if (userMessageLower.includes('albatross')) {
     return 'The albatross is a large seabird known for its long, narrow wings that allow it to glide effortlessly over the ocean for long distances. These birds are found in the Southern Ocean and the North Pacific. Albatrosses are exceptional fliers, with some species able to fly for hours or even days without flapping their wings. Their diet mainly consists of squid, fish, and other marine life. Albatrosses are also known for their elaborate courtship rituals and long lifespan, with some living to over 60 years.';
