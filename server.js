@@ -139,6 +139,17 @@ function generateBotResponse(userMessage) {
     return 'Haha! Glad you’re having a laugh! 😂 Let’s keep that positive energy going! Would you like to hear a funny animal story, or are you interested in cool facts about cars or birds? Type "yes" if you want to hear something fun!';
   }
 
+  else if (userMessage.includes('😢') || userMessage.includes('😭')) {
+    return 'Oh no, I’m so sorry to see that you’re feeling down. 😔 It’s okay to feel sad sometimes. Want to talk about what’s bothering you? Or maybe I can cheer you up with a motivational quote, a funny story, or something interesting to distract you? Let me know how I can help!';
+  }
+  else if (userMessage.includes('😡') || userMessage.includes('😠')) {
+    return 'Whoa, looks like you’re feeling angry. 😤 I totally understand that frustration. Would you like to vent or share what’s making you upset? Or maybe a fun distraction to help you cool off, like a joke or a trivia game? Let me know how I can help!';
+  }
+  else if (userMessage.includes('😎')) {
+    return 'Oh, looking cool! 😎 You’ve got the vibe going. Want to keep it up with some awesome facts or stories about your favorite things, or maybe some cool riddles or challenges? Let me know how I can match your coolness!';
+  }
+      
+
   // Love emojis (😍, ❤️)
   else if (userMessage.includes('😍') || userMessage.includes('❤️')) {
     awaitingResponse = true; // Flag to check for a "yes" response
@@ -146,7 +157,7 @@ function generateBotResponse(userMessage) {
   }
 
   // Surprised emojis (😲, 😯)
-  else if (userMessage.includes('😲') || userMessage.includes('😯')) {
+  else if (userMessage.includes('😲') || userMessage.includes('🙄')) {
     awaitingResponse = true; // Flag to check for a "yes" response
     return 'Whoa! Looks like you’re surprised! 😲 Want to hear an amazing, mind-blowing fact about animals, cars, or birds? Type "yes" if you’re ready to be amazed!';
   }
