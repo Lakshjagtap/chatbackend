@@ -128,7 +128,10 @@ function generateBotResponse(userMessage) {
   else if (userMessageLower.includes('crow')) {
     return 'Crows are highly intelligent birds that are found in many parts of the world. Known for their ability to solve complex problems, crows are capable of using tools, such as sticks, to obtain food. They have strong social structures and are known to live in large groups called murders. Crows are omnivores and will eat a wide variety of foods, from small animals to carrion and human food scraps. They are often seen in urban environments, as they are highly adaptable to living near humans. Crows also communicate with a wide range of vocalizations and body language.';
   }
-
+  else if (userMessage.includes('😊') || userMessage.includes('😄')) {
+    return 'It’s great to see you so cheerful! 😊 Life’s better with a smile, right? Let’s keep the good vibes going! Would you like to hear an uplifting story, maybe some motivational quotes, or explore fun facts about happiness? Let me know what makes you smile!';
+  }
+  
     // Laugh emojis (😂, 🤣)
   else if (userMessage.includes('😂') || userMessage.includes('🤣')) {
     awaitingResponse = true; // Flag to check for a "yes" response
