@@ -126,27 +126,82 @@ function generateBotResponse(userMessage) {
     return 'Crows are highly intelligent birds that are found in many parts of the world. Known for their ability to solve complex problems, crows are capable of using tools, such as sticks, to obtain food. They have strong social structures and are known to live in large groups called murders. Crows are omnivores and will eat a wide variety of foods, from small animals to carrion and human food scraps. They are often seen in urban environments, as they are highly adaptable to living near humans. Crows also communicate with a wide range of vocalizations and body language.';
   }
 
-   // Emoji responses with enhanced responses and guidance
-  else if (userMessage.includes('😊') || userMessage.includes('😄')) {
-    return 'I see you’re in a cheerful mood! 😊 What’s making you smile today? If you’d like, I can share some fun facts about animals, cars, or birds. Just let me know what interests you!';
-  }
-  else if (userMessage.includes('😢') || userMessage.includes('😭')) {
-    return 'Oh no! 😢 It seems like you might be feeling sad. Is there something I can do to help? I’m here for you. Want to talk about it, or should I share something uplifting like fun animal facts or amazing car models?';
-  }
+    // Laugh emojis (😂, 🤣)
   else if (userMessage.includes('😂') || userMessage.includes('🤣')) {
-    return 'Haha! Glad you’re having a laugh! 😂 Let’s keep that positive energy going! Would you like to hear a funny animal story, or are you interested in cool facts about cars or birds?';
+    awaitingResponse = true; // Flag to check for a "yes" response
+    return 'Haha! Glad you’re having a laugh! 😂 Let’s keep that positive energy going! Would you like to hear a funny animal story, or are you interested in cool facts about cars or birds? Type "yes" if you want to hear something fun!';
   }
-  else if (userMessage.includes('😎') || userMessage.includes('🤩')) {
-    return 'Looking super cool 😎 or feeling like a star? Let me know how I can keep that positive vibe going! If you’re into cool cars or fascinating animals, I can tell you all about them!';
+
+  // Love emojis (😍, ❤️)
+  else if (userMessage.includes('😍') || userMessage.includes('❤️')) {
+    awaitingResponse = true; // Flag to check for a "yes" response
+    return 'Aww, feeling the love! 😍❤️ Would you like to hear a heartwarming animal rescue story, or maybe a feel-good story about a famous car or a bird? Type "yes" if you want something heartwarming!';
   }
-  else if (userMessage.includes('🤔') || userMessage.includes('🧐')) {
-    return 'I see you’re thinking deeply! 🤔 Is there a tough question on your mind that I can help with? Maybe you’re curious about a specific animal, car, or bird? I can dive deep into any topic!';
+
+  // Surprised emojis (😲, 😯)
+  else if (userMessage.includes('😲') || userMessage.includes('😯')) {
+    awaitingResponse = true; // Flag to check for a "yes" response
+    return 'Whoa! Looks like you’re surprised! 😲 Want to hear an amazing, mind-blowing fact about animals, cars, or birds? Type "yes" if you’re ready to be amazed!';
   }
-  else if (userMessage.includes('😡') || userMessage.includes('🤬')) {
-    return 'I sense some frustration or anger 😡. Take a deep breath. How can I help make things better? Would you like to hear about something positive, like cute animals or cool car models to lighten the mood?';
+
+  // Thinking emojis (🤔)
+  else if (userMessage.includes('🤔')) {
+    awaitingResponse = true; // Flag to check for a "yes" response
+    return 'Hmm, deep in thought! 🤔 How about we dive into some cool facts? Would you like to learn something interesting about cars, animals, or birds? Type "yes" if you want to explore!';
   }
-  else if (userMessage.includes('😍') || userMessage.includes('😘')) {
-    return 'Aww, feeling the love! 😍 If you’re passionate about something, tell me more! I’d love to hear about it. Interested in cute animal facts or awesome car details? Let’s chat!';
+
+  // Thumbs up emoji (👍)
+  else if (userMessage.includes('👍')) {
+    awaitingResponse = true; // Flag to check for a "yes" response
+    return 'Great! Thumbs up! 👍 Would you like to hear a cool fact about your favorite animal, car, or bird? Type "yes" if you’re interested!';
+  }
+
+  // Prayer emoji (🙏)
+  else if (userMessage.includes('🙏')) {
+    awaitingResponse = true; // Flag to check for a "yes" response
+    return 'Sending positive vibes! 🙏 Would you like to hear an inspiring story or some uplifting facts about animals, cars, or birds? Type "yes" if you want some motivation!';
+  }
+
+  // Handle "yes" responses
+  else if (awaitingResponse && (userMessageLower.includes('yes') || userMessageLower.includes('sure') || userMessageLower.includes('yeah'))) {
+    // Choose a random story or fact depending on the emoji context
+    const randomAnimalStory = [
+      "Did you know that sea otters hold hands when they sleep to keep from drifting apart? How adorable is that!",
+      "Elephants are incredibly intelligent and can recognize themselves in a mirror. They also mourn their dead — a truly emotional species!",
+      "Kangaroos can't walk backward! They're built for hopping forward with their strong hind legs."
+    ];
+
+    const randomCarFact = [
+      "The fastest car in the world, the Bugatti Chiron Super Sport 300+, can reach speeds of over 300 mph. That's insanely fast!",
+      "The Tesla Model S was the first electric car to win a Motor Trend Car of the Year award. Talk about innovation!",
+      "The iconic Ford Mustang was originally designed as a 'pony car,' a category of American muscle cars that started in the 1960s."
+    ];
+
+    const randomBirdFact = [
+      "Did you know some species of birds, like parrots, can mimic human speech? They're amazing talkers!",
+      "The Arctic Tern migrates farther than any other bird, traveling up to 44,000 miles every year!",
+      "Owls can rotate their heads 270 degrees. Now that's some serious neck flexibility!"
+    ];
+
+    // Handle responses based on the emoji context
+    if (userMessageLower.includes('animal')) {
+      const randomStory = randomAnimalStory[Math.floor(Math.random() * randomAnimalStory.length)];
+      awaitingResponse = false; // Reset after the response
+      return `Here's a fun animal story for you: ${randomStory}`;
+    } else if (userMessageLower.includes('car')) {
+      const randomStory = randomCarFact[Math.floor(Math.random() * randomCarFact.length)];
+      awaitingResponse = false; // Reset after the response
+      return `Here's a cool car fact: ${randomStory}`;
+    } else if (userMessageLower.includes('bird')) {
+      const randomStory = randomBirdFact[Math.floor(Math.random() * randomBirdFact.length)];
+      awaitingResponse = false; // Reset after the response
+      return `Here's an interesting bird fact: ${randomStory}`;
+    } else {
+      // Default response
+      const randomStory = randomAnimalStory[Math.floor(Math.random() * randomAnimalStory.length)];
+      awaitingResponse = false; // Reset after the response
+      return `Alright! Here's a funny animal story for you: ${randomStory}`;
+    }
   }
   else if (userMessage.includes('🚗') || userMessage.includes('🚙')) {
     return 'Are you in the mood to talk about cars? 🚗 Let me know if you want to dive into the world of sports cars, sedans, or SUVs! Or, I can share amazing animal facts to keep you entertained!';
